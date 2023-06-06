@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+      border: 1px solid;
+      border-color : dimgray;
+      padding : 5px; /*untuk ngasihh lebar background*/
+      margin: 10px;
+      justify-content: center;
+      border-radius : 15px;
+      text-align: center;
+    }
+
+    </style>
+<title>Bootcamp Project</title>
+</head>
+<body>
+    <div class="container">
+    <center>
+    <table>
+        <h2>Data Siswa</h2>
+        <thread>
+            <tr>
+                <th>No</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Nama</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Tanggal Lahir</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Kelas</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Alamat</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>No. Handphone</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Nama Orangtua</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>No. Hp. Orangtua</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thread>
+        <tbody>
+            <% data.forEach((siswa, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.name %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.tgl_lahir %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.kelas %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.alamat %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.no_hp %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.nama_ortu %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><%= siswa.no_hp_ortu %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="/admin/edit/ <%= siswa.id %>">Edit</a>
+                        <a
+                            href="/admin/delete/<%= siswa.id %>"
+                            onclick="return confirm('apakah anda yakin ingin menghapus?')"> hapus</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            
+            <% }) %>
+        </tbody>
+        </div>
+    </table>
+</center>
+    <div class="container">
+    <h2>Tambah Data Siswa</h2>
+    <form action="admin/siswa-register" method="POST">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="tgl_lahir">Tanggal Lahir:</label>
+        <input type="text" id="tgl_lahir" name="tgl_lahir"/>
+        <label for="kelas">kelas:</label>
+        <select id="kelas" name="kelas" required>    
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
+            <option value="MTK">Matematika</option>
+        </select>
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat"/>
+        <label for="no_hp">Nomor Handphone:</label>
+        <input type="text" id="no_hp" name="no_hp"  />
+        <label for="nama_ortu">Nama Orangtua:</label>
+        <input type="text" id="nama_ortu" name="nama_ortu"  />
+        <label for="no_hp_ortu">No. hp. Orangtua:</label>
+        <input type="text" id="no_hp_ortu" name="no_hp_ortu"  />
+        <button type="submit">Tambah</button>
+    </form>
+    </div>
+</body>
+<footer>
+</footer>
+</html>
