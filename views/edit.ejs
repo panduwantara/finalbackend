@@ -15,11 +15,11 @@
       text-align: center;
     }
         </style>
-<title>Bootcamp Project</title>
+<title>Sekolah Kembang Kuncup</title>
 </head>
 <body>
     <div class="container">
-    <h2>Edit Data Siswa : <%= data.id %></h2>
+    <h2 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Edit Data Siswa : <%= data.id %></h2>
     <form action="/admin/edit/<%= data.id %>" method="POST">
         <label for="name">Nama:</label>
         <input type="text" id="name" name="name" value = "<%= data.name %>" required />
